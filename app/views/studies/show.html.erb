@@ -1,0 +1,21 @@
+
+<p>
+  <strong>Title:</strong>
+  <%= @study.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @study.text %>
+</p>
+
+<h2>Centres</h2>
+<%= render @study.centres %>
+
+
+<h2>Add a centre:</h2>
+<%= render 'centres/form' %>
+
+
+<%= link_to 'Edit', edit_study_path(@study) %> |
+<%= link_to 'Back', studies_path %>

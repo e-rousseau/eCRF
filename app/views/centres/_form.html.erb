@@ -1,0 +1,14 @@
+
+<%= form_for([@study, @study.centres.build]) do |f| %>
+  <p>
+    <%= f.label :centre_code %><br>
+    <%= f.text_field :centre_code %>
+  </p>
+  <p>
+    <%= f.label :centre_name %><br>
+    <%= f.text_area :centre_name %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

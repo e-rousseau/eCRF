@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  centre_code: MyString
+  centre_name: MyText
+  study: one
+
+two:
+  centre_code: MyString
+  centre_name: MyText
+  study: two

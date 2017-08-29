@@ -1,0 +1,16 @@
+
+<p>
+  <strong>Centre Code:</strong>
+  <%= centre.centre_code %>
+</p>
+
+<p>
+  <strong>Centre Name:</strong>
+  <%= centre.centre_name %>
+</p>
+
+<p>
+  <%= link_to 'Destroy Centre', [centre.study, centre],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>
