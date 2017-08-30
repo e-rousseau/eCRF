@@ -9,13 +9,50 @@
   <%= @study.text %>
 </p>
 
-<h2>Centres</h2>
-<%= render @study.centres %>
 
-<h2>Add a centre:</h2>
-<p id="error"><%= flash[:error] %></p>
-<%= render 'centres/form' %>
+
+<div class="tab">
+  <button class="tablinks" onclick="openProperty(event, 'Centres')" id="defaultOpen">Centres</button>
+  <button class="tablinks" onclick="openProperty(event, 'Forms')">Forms</button>
+</div>
+
+<div id="Centres" class="tabcontent">
+  <h2>Centres</h2>
+  <%= render @study.centres %>
+
+  <h2>Add a centre:</h2>
+  <p id="error"><%= flash[:error] %></p>
+  <%= render 'centres/form' %>
+</div>
+
+<div id="Forms" class="tabcontent">
+
+  <h2>Forms</h2>
+  <%= render @study.forms %>
+
+  <h2>Add a form:</h2>
+  <p id="error"><%= flash[:error] %></p>
+  <%= form_for([@study, @study.forms.build]) do |f| %>
+    <p>
+      <%= f.label :form_code %><br>
+      <%= f.text_field :form_code %>
+    </p>
+    <p>
+      <%= f.label :form_name %><br>
+      <%= f.text_area :form_name %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+</div>
+
 
 
 <%= link_to 'Edit', edit_study_path(@study) %> |
 <%= link_to 'Back', studies_path %>
+
+<script>
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>

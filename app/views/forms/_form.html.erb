@@ -1,0 +1,20 @@
+
+
+<p>
+  <strong>Form Code:</strong>
+  <%= form.form_code %>
+</p>
+
+<p>
+  <strong>Form Name:</strong>
+  <%= form.form_name %>
+</p>
+
+<p>
+  <%= link_to 'Destroy Form', [form.study, form],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+  | <td><%= link_to 'Show', study_form_path(@study, form) %></td>
+  | <td><%= link_to 'Edit', edit_study_form_path(@study, form) %></td>
+
+</p>

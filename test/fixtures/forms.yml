@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  form_code: MyString
+  form_name: MyText
+  study: one
+
+two:
+  form_code: MyString
+  form_name: MyText
+  study: two
