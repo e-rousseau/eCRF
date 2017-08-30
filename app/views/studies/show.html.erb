@@ -12,8 +12,8 @@
 <h2>Centres</h2>
 <%= render @study.centres %>
 
-
 <h2>Add a centre:</h2>
+<p id="error"><%= flash[:error] %></p>
 <%= render 'centres/form' %>
 
 

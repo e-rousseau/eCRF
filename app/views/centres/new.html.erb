@@ -1,0 +1,19 @@
+<h1>New Centre</h1>
+
+<% if @centre.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@centre.errors.count, "error") %> prohibited
+      this centre from being saved:
+    </h2>
+    <ul>
+      <% @centre.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', study_path(@study) %>

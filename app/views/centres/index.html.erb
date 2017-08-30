@@ -1,0 +1,21 @@
+
+<h1>Listing centres</h1>
+
+<table>
+  <tr>
+    <th>Centre Code</th>
+    <th>Centre Name</th>
+  </tr>
+
+  <% @centres.each do |centre| %>
+    <tr>
+      <td><%= centre.centre_code %></td>
+      <td><%= centre.centre_name %></td>
+      <td><%= link_to 'Show', study_centre_path(@study, @centre) %></td>
+      <td><%= link_to 'Edit', edit_study_centre_path(@study, @centre) %></td>
+      <td><%= link_to 'Destroy', study_centre_path(@study, @centre),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }%></td>
+    </tr>
+  <% end %>
+</table>
