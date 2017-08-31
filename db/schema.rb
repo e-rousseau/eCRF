@@ -12,13 +12,16 @@
 
 ActiveRecord::Schema.define(version: 20170831015155) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "centres", force: :cascade do |t|
     t.string   "centre_code"
     t.text     "centre_name"
     t.integer  "study_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["study_id"], name: "index_centres_on_study_id"
+    t.index ["study_id"], name: "index_centres_on_study_id", using: :btree
   end
 
   create_table "forms", force: :cascade do |t|
@@ -27,7 +30,7 @@ ActiveRecord::Schema.define(version: 20170831015155) do
     t.integer  "study_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["study_id"], name: "index_forms_on_study_id"
+    t.index ["study_id"], name: "index_forms_on_study_id", using: :btree
   end
 
   create_table "studies", force: :cascade do |t|
@@ -45,4 +48,6 @@ ActiveRecord::Schema.define(version: 20170831015155) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "centres", "studies"
+  add_foreign_key "forms", "studies"
 end
