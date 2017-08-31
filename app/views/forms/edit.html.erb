@@ -1,0 +1,19 @@
+<h1>Edit form</h1>
+
+
+<%= form_for([@study, @form]) do |f| %>
+  <p>
+    <%= f.label :form_code %><br>
+    <%= f.text_field :form_code %>
+  </p>
+  <p>
+    <%= f.label :form_name %><br>
+    <%= f.text_area :form_name %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
+<%= link_to 'Back', study_path(@study) %>

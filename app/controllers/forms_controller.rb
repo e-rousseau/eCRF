@@ -1,4 +1,21 @@
 class FormsController < ApplicationController
+
+
+  def index
+    @study = Study.find(params[:study_id])
+    @form = @study.forms.all
+  end
+
+  def show
+    @study = Study.find(params[:study_id])
+    @form = @study.forms.find(params[:id])
+  end
+
+  def edit
+    @study = Study.find(params[:study_id])
+    @form = @study.forms.find(params[:id])
+  end
+
   def create
    @study = Study.find(params[:study_id])
    @form = @study.forms.create(form_params)
